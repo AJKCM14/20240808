@@ -1,0 +1,11 @@
+body{
+    background-color: black;
+}
+#message{
+    color:antiquewhite;
+    border-style: ridge;
+    border-radius: 5px;
+    border-width: 1px;
+    margin-top: 250px;
+    font-family: Monaco, monospace;
+}
