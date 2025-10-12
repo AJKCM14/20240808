@@ -9,3 +9,30 @@ body{
     margin-top: 250px;
     font-family: Monaco, monospace;
 }
+#song1bdy{
+    background-color:rgb(32, 10, 52)
+}
+#lyrics{
+    color:beige;
+    text-align: center;
+    font-size: 15px;
+    width: 100%;
+}
+#titlel{
+    font-size: 18px;
+    font-family: bold;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 640px;
+  gap: 25px;
+}
+iframe {
+  width: 640px;
+  height: 480px;
+  border: none;
+  display: block;
+}
+
