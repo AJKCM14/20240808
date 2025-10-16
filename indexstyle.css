@@ -14,25 +14,12 @@ body{
 }
 #lyrics{
     color:beige;
-    text-align: center;
     font-size: 15px;
     width: 100%;
+    text-align: center;
 }
-#titlel{
-    font-size: 18px;
-    font-family: bold;
+.video-container iframe {
+    width: 640px;
+    height: 360px;
+    border: 0;
 }
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 640px;
-  gap: 25px;
-}
-iframe {
-  width: 640px;
-  height: 480px;
-  border: none;
-  display: block;
-}
-
