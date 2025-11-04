@@ -8,9 +8,10 @@ body{
     border-width: 1px;
     margin-top: 250px;
     font-family: Monaco, monospace;
+    text-align: justify;
 }
 #song1bdy{
-    background-color:rgb(32, 10, 52)
+    background-color:rgb(32, 10, 52);
 }
 #lyrics{
     color:beige;
