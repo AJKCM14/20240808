@@ -1,0 +1,33 @@
+name: Email on website update
+
+on:
+  push:
+    branches:
+      - main  # Change if your deployment branch is different
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send email notification
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.SMTP_SERVER }}
+          server_port: ${{ secrets.SMTP_PORT }}
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+
+          subject: Website updated
+          to: ${{ secrets.EMAIL_TO }}
+          from: Website Updates (Automated) <${{ secrets.EMAIL_FROM }}>
+
+          body: |
+            Your website was updated.
+
+            Repository: ${{ github.repository }}
+            Branch: ${{ github.ref_name }}
+            Commit: ${{ github.sha }}
+
+            View commit:
+            https://github.com/${{ github.repository }}/commit/${{ github.sha }}
