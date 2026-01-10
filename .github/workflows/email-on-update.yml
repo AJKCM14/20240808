@@ -1,16 +1,16 @@
-name: Email on website update
+name: Notify website update
 
 on:
   push:
     branches:
-      - main  # Change if your deployment branch is different
+      - main   # Change if your branch is different
 
 jobs:
   notify:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Send email notification
+      - name: Send update email
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: ${{ secrets.SMTP_SERVER }}
@@ -18,16 +18,11 @@ jobs:
           username: ${{ secrets.SMTP_USERNAME }}
           password: ${{ secrets.SMTP_PASSWORD }}
 
-          subject: Website updated
+          subject: Website Updated
           to: ${{ secrets.EMAIL_TO }}
           from: Website Updates (Automated) <${{ secrets.EMAIL_FROM }}>
 
           body: |
-            Your website was updated.
-
-            Repository: ${{ github.repository }}
-            Branch: ${{ github.ref_name }}
-            Commit: ${{ github.sha }}
-
-            View commit:
-            https://github.com/${{ github.repository }}/commit/${{ github.sha }}
+            The website has been updated.
+            You can view it here:
+            https://yourusername.github.io/your-repo-name/index.html
